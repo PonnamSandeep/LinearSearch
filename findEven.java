@@ -1,0 +1,42 @@
+package sandy;
+
+public class findEven {
+
+	public static void main(String[] args) {
+		int[] nums= {11,234,2345,1,1234};
+		System.out.println(findNumber(nums));
+	}
+
+	static int findNumber(int[] nums) {
+		int count=0;
+		for(int num:nums) {
+			if(even(num)) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	static boolean even(int num) {
+		int validateEvenOrNot=digits(num);
+		return validateEvenOrNot%2==0;
+	}
+	
+	static int digits(int num) {
+		if(num<0) {
+			num *=-1;
+		}
+		if(num==0) {
+			return 1;
+		}
+		int count=0;
+		while(num>0) {
+			count++;
+			num=num/10;
+		}
+		return count;
+		
+//		return (int) Math.log10(count)+1;
+	}
+
+}
